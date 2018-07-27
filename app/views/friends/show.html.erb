@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @friend.author %>
+</p>
+
+<p>
+  <strong>Idea:</strong>
+  <%= @friend.idea %>
+</p>
+
+<p>
+  <strong>Idea grp:</strong>
+  <%= @friend.idea_grp %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @friend.room_id %>
+</p>
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>
