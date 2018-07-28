@@ -3,7 +3,7 @@ class CreateFriends < ActiveRecord::Migration[5.2]
     create_table :friends do |t|
       t.string :author
       t.string :idea
-      t.int :idea_grp
+      t.integer :idea_grp
       t.string :room_id
 
       t.timestamps

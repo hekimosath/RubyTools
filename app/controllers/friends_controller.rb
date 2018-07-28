@@ -4,7 +4,12 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
+
     @friends = Friend.all
+
+  end
+
+  def room
   end
 
   # GET /friends/1
