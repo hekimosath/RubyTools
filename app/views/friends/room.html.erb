@@ -1,2 +1,43 @@
-<h1>Friends#room</h1>
-<p>thanks!</p>
+<h1>Brain Storming Tool</h1>
+<p>Serve the idea with your frineds!!</p>
+
+<div class="bs_room_wrap">
+  <div id="idea_appear_space">
+
+  </div>
+  <input type="text" class="idea_input_box" name="" value="">
+</div>
+
+
+<script type="text/javascript">
+var Engine = Matter.Engine, //物理シュミレーションおよびレンダリングを管理するコントローラーとなるメソッド
+  World = Matter.World, //物理演算領域の作成・操作するメソッドを含む
+  Body = Matter.Body, //剛体のモデルを作成・操作するメソッドを含む
+  Bodies = Matter.Bodies, //一般的な剛体モデルを作成するメソッドを含む
+  Constraint = Matter.Constraint, //制約を作成・操作するメソッドを含む
+  Composites = Matter.Composites,
+  Common = Matter.Common,
+  Vertices = Matter.Vertices, //頂点のセットを作成・操作するメソッドを含む
+  MouseConstraint = Matter.MouseConstraint; //マウスの制約を作成するためのメソッドが含む
+
+  // Matter.jsのEngineを作成
+  var container = document.getElementById('idea_appear_space');
+  var engine = Engine.create(container, {
+  	render: { //レンダリングの設定
+  		options: {
+  			wireframes: false, //ワイヤーフレームモードをoff
+  			width: 640, //canvasのwidth(横幅)
+  			height: 480, //canvasのheight(高さ)
+  			background: 'rgba(0, 0, 0, 0)'
+  		}
+  	}
+  });
+  var boxA = Bodies.rectangle(400, 200, 80, 80);
+  var boxB = Bodies.rectangle(450, 50, 80, 80);
+  // isStatic:静的(完全固定)
+  var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+  
+  World.add(engine.world, [boxA, boxB,ground]);
+  Engine.run(engine);
+
+</script>
